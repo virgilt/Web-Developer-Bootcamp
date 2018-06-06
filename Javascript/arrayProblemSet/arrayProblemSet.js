@@ -1,49 +1,39 @@
 function printReverse(arr) {
   var index = arr.length - 1;
   for (var i = index; i >=0; i--) {
-    console.log(arr[i])
+    console.log(arr[i]);
   }
 }
 
-
+//this is where isUniform() starts
 function isUniform(arr) {
   var first = arr[0];
-  var compare = true;
-  for (var i = 0; i < arr.length && compare === true; i++) {
-    var compare = (first === arr[i]);
-    // console.log(compare);
+  for (var i = 1; i < arr.length; i++) {
+    if (first !== arr[i]) {
+      return false
     }
-  return compare
+  }
+  return true;
 }
 
-
+//this is where sumArray() starts
 function sumArray(arr) {
   //get number at index 0
   var total = arr[0];
-  //get length of arrayProblemSet
-  var length = arr.length;
-
-  for (var i = 1; i < length; i++) {
+  for (var i = 1; i < arr.length; i++) {
     var total = total + arr[i];
   }
-  return total
+  return total;
 }
 
-
-
+//this is where max() starts
 function max(arr) {
   //get number at index 0
-  var number = arr[0];
-  //get length of array
-  var length = arr.length;
-
-  for (var i = 1; i < length; i++) {
-    if (number > arr[i]) {
-      var bigNum = number;
-    }
-    else {
-      var bigNum = arr[i];
+  var max = arr[0];
+  for (var i = 1; i < arr.length; i++) {
+    if (max < arr[i]) {
+      var max = arr[i];
     }
   }
-  return bigNum
+  return max;
 }
